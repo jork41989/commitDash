@@ -3,34 +3,28 @@ import './dash.css'
 
 const UserDashSub = (state) =>{
   let dataCheck = () => {
-    let total = 0
-    total += dayCalc(state.data.week1DayCount)
-    total += dayCalc(state.data.week2DayCount);
-    total += commitTotal(state.data.week1CommitCount);
-    total += commitTotal(state.data.week2CommitCount);
-    console.log(total)
+    let total = state.data.total;
+    let color
+    if (total === 100){
+      color = { backgroundColor: "rgb(78, 156, 0)" };
+    } else if (total < 100 && total >= 75){
+      color = { backgroundColor: "rgba(255, 255, 0, 0.794)"};
+    } else {
+      color = { backgroundColor: "rgba(255, 0, 0, 0.678)" };
+    }
+    color.width = `${total}%`
+    console.log(color)
     return (
       <div className="userDash">
         <div>{state.data.username}</div>
-        <div>Health</div>
-        <div className="HealthBar"> {Math.floor(total)}</div>
+        <div className="healthBar">
+          <p>{Math.floor(total)}</p>
+          <div className="healthBarColor" style={color}></div>
+        </div>
       </div>
-    )
+    );
   }
-  let dayCalc = (num) => {
-    if (num > 5){
-      return 25
-    } else {
-      return 25 * (num / 7)
-    }
-  }
-  let commitTotal = (num) => {
-    if (num > 25) {
-      return 25
-    } else {
-      return 25 * (num / 25);
-    }
-  }
+
   return(
     <div className="userMain">
       {dataCheck()}

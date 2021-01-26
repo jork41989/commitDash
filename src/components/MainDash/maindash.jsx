@@ -21,10 +21,30 @@ const MainDash = () =>{
       tempData.week2DayCount = week2Data.dayTotal;
       tempData.week2CommitCount = week2Data.commitCount;
       tempData.username = key
+       let total = 0;
+       total += dayCalc(tempData.week1DayCount);
+       total += dayCalc(tempData.week2DayCount);
+       total += commitTotal(tempData.week1CommitCount);
+       total += commitTotal(tempData.week2CommitCount);
+       tempData.total = total
       orgUserData[key] = tempData
     })
   };
 
+    let dayCalc = (num) => {
+      if (num > 5) {
+        return 25;
+      } else {
+        return 25 * (num / 7);
+      }
+    };
+    let commitTotal = (num) => {
+      if (num > 25) {
+        return 25;
+      } else {
+        return 25 * (num / 25);
+      }
+    };
   let dayCount = (week) => {
     let commit = 0
     let dayTotal = 0

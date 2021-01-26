@@ -13,7 +13,7 @@ const UserDashSub = (state) =>{
       color = { backgroundColor: "rgba(255, 0, 0, 0.678)" };
     }
     color.width = `${total}%`
-    console.log(color)
+    console.log(state.data)
     return (
       <div className="userDash">
         <div>{state.data.username}</div>

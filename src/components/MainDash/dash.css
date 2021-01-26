@@ -35,9 +35,10 @@
 }
 
 .scoreText{
- margin: 0;
- text-align: center;
-     position: relative;
-     right: -50%;
-     z-index: 3;
+  margin: 0;
+  text-align: center;
+  position: relative;
+  z-index: 3;
+  color: white;
+  font-weight: 700;
 }

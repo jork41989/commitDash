@@ -18,8 +18,9 @@ const UserDashSub = (state) =>{
       <div className="userDash">
         <div>{state.data.username}</div>
         <div className="healthBar">
-          <p className="scoreText">{Math.floor(total)}</p>
-          <div className="healthBarColor" style={color}></div>
+          <div className="healthBarColor" style={color}>
+            <p className="scoreText">{Math.floor(total)}</p>
+          </div>
         </div>
       </div>
     );

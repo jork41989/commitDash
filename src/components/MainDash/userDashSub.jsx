@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import './dash.css'
 
 const UserDashSub = (state) =>{
   let dataCheck = () => {
@@ -10,7 +10,7 @@ const UserDashSub = (state) =>{
     total += commitTotal(state.data.week2CommitCount);
     console.log(total)
     return (
-      <div>
+      <div className="userDash">
         <div>{state.data.username}</div>
         <div>Health</div>
         <div className="HealthBar"> {Math.floor(total)}</div>
@@ -32,7 +32,7 @@ const UserDashSub = (state) =>{
     }
   }
   return(
-    <div>
+    <div className="userMain">
       {dataCheck()}
     </div>
   )

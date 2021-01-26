@@ -1,0 +1,16 @@
+.userDash{
+  display: flex;
+  flex-direction: row;
+}
+
+.dashMain{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10%;
+}
+
+.userMain{
+  display: flex;
+  flex-direction: column;
+}

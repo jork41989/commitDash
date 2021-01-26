@@ -48,7 +48,7 @@ const MainDash = () =>{
     return userComps
   }
   return(
-    <div>
+    <div className="dashMain">
       {userComponents()}
     </div>
   )
